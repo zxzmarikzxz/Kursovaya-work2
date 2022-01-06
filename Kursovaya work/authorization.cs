@@ -66,6 +66,7 @@ namespace Kursovaya_work
                 menu_director me2 = new menu_director();
                 this.Hide();
                 me2.ShowDialog();
+
             }
             else
             {
