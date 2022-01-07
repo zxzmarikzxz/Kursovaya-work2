@@ -62,6 +62,12 @@
     <Compile Include="change_service.Designer.cs">
       <DependentUpon>change_service.cs</DependentUpon>
     </Compile>
+    <Compile Include="pribil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pribil.Designer.cs">
+      <DependentUpon>pribil.cs</DependentUpon>
+    </Compile>
     <Compile Include="menu_director.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="change_service.resx">
       <DependentUpon>change_service.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pribil.resx">
+      <DependentUpon>pribil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="menu_director.resx">
       <DependentUpon>menu_director.cs</DependentUpon>

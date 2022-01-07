@@ -24,11 +24,13 @@ namespace Kursovaya_work
             try
             {
                 conbaza.Open();
+                //Выбор всех данных из таблицы Staff и их фильтрование по подходящим логину и паролю
                 string commandStr = $"SELECT count(*) FROM Staff WHERE login = '{login}' AND password = '{password}'";
                 MySqlCommand comm1 = new MySqlCommand(commandStr, conbaza);
                 int k = Convert.ToInt32(comm1.ExecuteScalar());
                 if (k != 0)
                 {
+                //Выбор столбца access в зависимости от логина и пароля
                 string commandStr2 = $"SELECT access FROM Staff WHERE login = '{login}' AND password = '{password}'";
                     MySqlCommand comm2 = new MySqlCommand(commandStr2, conbaza);
                     a = Convert.ToInt32(comm2.ExecuteScalar());
@@ -55,17 +57,22 @@ namespace Kursovaya_work
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Если возвращаемое значение a равняется 1(уровень доступа, то есть столбец access в БД), открывается форма меню сотрудника,
+            //если 2 то форма меню директора
             if (Podkluchenie(textBox1.Text, textBox2.Text) == 1)
             {
+                MessageBox.Show("Вы авторизированы как сотрудник");
+                //Скрытие данной формы и запуск следующей в зависимости от введёных данных
                 menu_employee me = new menu_employee();
                 this.Hide();
-                me.ShowDialog();
+                me.ShowDialog();                
             }
             else if (Podkluchenie(textBox1.Text, textBox2.Text) == 2)
             {
+                MessageBox.Show("Вы авторизированы как директор");
                 menu_director me2 = new menu_director();
                 this.Hide();
-                me2.ShowDialog();
+                me2.ShowDialog();                
 
             }
             else

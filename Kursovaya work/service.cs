@@ -61,6 +61,12 @@ namespace Kursovaya_work
             this.Hide();
             me.ShowDialog();
         }
-     
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            menu_employee me = new menu_employee();
+            this.Hide();
+            me.ShowDialog();
+        }
     }
 }

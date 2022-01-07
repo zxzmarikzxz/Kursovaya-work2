@@ -33,5 +33,12 @@ namespace Kursovaya_work
         {
             Application.Exit();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            pribil cs = new pribil();
+            this.Hide();
+            cs.ShowDialog();
+        }
     }
 }
