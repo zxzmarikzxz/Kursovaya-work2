@@ -70,28 +70,31 @@ namespace Kursovaya_work
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button1.Location = new System.Drawing.Point(594, 141);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(92, 77);
             this.button1.TabIndex = 1;
             this.button1.Text = "Вывод списка доступных услуг";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button2.Location = new System.Drawing.Point(594, 266);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(92, 77);
             this.button2.TabIndex = 2;
             this.button2.Text = "Назад";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // service
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(698, 450);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);

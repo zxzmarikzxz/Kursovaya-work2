@@ -69,12 +69,13 @@ namespace Kursovaya_work
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button1.Location = new System.Drawing.Point(437, 24);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(164, 41);
             this.button1.TabIndex = 1;
             this.button1.Text = "Вывести данные";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
@@ -98,6 +99,7 @@ namespace Kursovaya_work
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(674, 505);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -105,6 +107,7 @@ namespace Kursovaya_work
             this.Controls.Add(this.dataGridView1);
             this.Name = "pribil";
             this.Text = "Прибыль";
+            this.Load += new System.EventHandler(this.pribil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -55,6 +55,7 @@ namespace Kursovaya_work
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(145, 88);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
@@ -72,12 +73,13 @@ namespace Kursovaya_work
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button1.Location = new System.Drawing.Point(157, 206);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 51);
             this.button1.TabIndex = 4;
             this.button1.Text = "Ввести";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
@@ -93,6 +95,7 @@ namespace Kursovaya_work
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(417, 436);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);

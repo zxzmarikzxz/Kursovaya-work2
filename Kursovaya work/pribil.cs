@@ -55,5 +55,10 @@ namespace Kursovaya_work
         {
             
         }
+
+        private void pribil_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

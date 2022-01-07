@@ -40,5 +40,10 @@ namespace Kursovaya_work
             this.Hide();
             cs.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
