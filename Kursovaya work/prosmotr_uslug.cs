@@ -65,6 +65,7 @@ namespace Kursovaya_work
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //Проверка на пустоту
             if (textBox1.Text == "" || textBox2.Text == "" || comboBox2.Text == "" || comboBox3.Text == "" || dateTimePicker1.Text == "")
             {
                 MessageBox.Show("Введите данные");
@@ -73,16 +74,18 @@ namespace Kursovaya_work
             { 
                 conbaza.Open();
                 {
-                    string commandStr = $"INSERT INTO Service_Rendering (ID_sr,fio_client,brand,date_time,service) VALUES (@id,@Fio_client,@brend,@dt,@servIce)";
+                    //Вставляем значения в таблицу Service_Rendering
+                    string commandStr = $"INSERT INTO Service_Rendering (ID_sr,fio_client,brand,date_time,service,cost_service) VALUES (@id,@Fio_client,@brend,@dt,@servIce,@cost)";
                     MySqlCommand command = new MySqlCommand(commandStr, conbaza);
                     try
                     {
-                        //берём значение из текстбоксов,комбобоксов,датапикера и кидаем в базу данных
+                        //берём значение из текстбоксов,комбобоксов,дататаймпикера и кидаем в базу данных
                         command.Parameters.Add("@id", MySqlDbType.VarChar).Value = textBox1.Text;
                         command.Parameters.Add("@Fio_client", MySqlDbType.VarChar).Value = textBox2.Text;
                         command.Parameters.Add("@brend", MySqlDbType.VarChar).Value = comboBox3.Text;
                         command.Parameters.Add("@dt", MySqlDbType.DateTime).Value = dateTimePicker1.Text;
                         command.Parameters.Add("@servIce", MySqlDbType.VarChar).Value = comboBox2.Text;
+                        command.Parameters.Add("@cost", MySqlDbType.VarChar).Value = textBox3.Text;
                         //Изменения данных в БД
                         command.ExecuteNonQuery();
 
@@ -109,6 +112,30 @@ namespace Kursovaya_work
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conbaza.Open();
+                //Запрос к базе данных(взять ID_sr,fio_client,brand,date_time,service,cost_service из таблицы Service_Rendering)
+                string commandStr = "SELECT ID_sr,fio_client,brand,date_time,service,cost_service FROM Service_Rendering";
+                MySqlDataAdapter adapter = new MySqlDataAdapter(commandStr, conbaza);
+                DataTable dTable = new DataTable();
+                adapter.Fill(dTable);
+                dataGridView1.Rows.Clear();
+                //Добавление строк пока i не станет больше или равно количеству строк таблицы(dTable.Rows.Count количество строк таблицы)
+                for (int i = 0; i < dTable.Rows.Count; i++)
+                {
+                    dataGridView1.Rows.Add(dTable.Rows[i].ItemArray);
+                }
+            }
+            catch
+            {
+
+            }
+            conbaza.Close();
         }
     }
 }

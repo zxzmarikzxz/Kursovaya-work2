@@ -25,6 +25,7 @@ namespace Kursovaya_work
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            //Проверка на пустоту
             if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "")
             {
                 MessageBox.Show("Введите данные");
@@ -33,6 +34,7 @@ namespace Kursovaya_work
             { 
                 conbaza.Open();
                 {
+                    //Вставляем значения в таблицу Service
                     string commandStr = $"INSERT INTO Service (ID_service,service, cost_service) VALUES (@id,@servic,@cost)";
                     MySqlCommand command = new MySqlCommand(commandStr, conbaza);
                     try
@@ -88,9 +90,7 @@ namespace Kursovaya_work
         }
 
         private void change_service_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            menu_director md = new menu_director();
-            md.Show();
+        {           
             this.Close();
         }
 
@@ -125,7 +125,7 @@ namespace Kursovaya_work
             {
                 string a = textBox3.Text;
                 string b = textBox2.Text;
-                if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "")
+                if (textBox2.Text == "" || textBox3.Text == "")
                 {
                     MessageBox.Show("Введите данные");
                 }

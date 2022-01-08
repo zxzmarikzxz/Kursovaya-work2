@@ -30,12 +30,6 @@ namespace Kursovaya_work
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id_sr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fio_client = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.service = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -49,6 +43,15 @@ namespace Kursovaya_work
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.id_sr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fio_client = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.service = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,43 +71,12 @@ namespace Kursovaya_work
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // id_sr
-            // 
-            this.id_sr.HeaderText = "id";
-            this.id_sr.Name = "id_sr";
-            // 
-            // fio_client
-            // 
-            this.fio_client.HeaderText = "ФИО клиента";
-            this.fio_client.Name = "fio_client";
-            // 
-            // brand
-            // 
-            this.brand.HeaderText = "Фирма";
-            this.brand.Name = "brand";
-            // 
-            // date_time
-            // 
-            this.date_time.HeaderText = "Дата и врeмя";
-            this.date_time.Name = "date_time";
-            // 
-            // service
-            // 
-            this.service.HeaderText = "Услуга";
-            this.service.Name = "service";
-            this.service.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Цена";
-            this.Column1.Name = "Column1";
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button1.Location = new System.Drawing.Point(643, 71);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(234, 64);
+            this.button1.Size = new System.Drawing.Size(204, 64);
             this.button1.TabIndex = 1;
             this.button1.Text = "Просмотр доступных услуг";
             this.button1.UseVisualStyleBackColor = false;
@@ -113,9 +85,9 @@ namespace Kursovaya_work
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button2.Location = new System.Drawing.Point(995, 70);
+            this.button2.Location = new System.Drawing.Point(898, 70);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(234, 67);
+            this.button2.Size = new System.Drawing.Size(208, 67);
             this.button2.TabIndex = 2;
             this.button2.Text = "Добавить данные";
             this.button2.UseVisualStyleBackColor = false;
@@ -227,7 +199,7 @@ namespace Kursovaya_work
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button3.Location = new System.Drawing.Point(877, 329);
+            this.button3.Location = new System.Drawing.Point(888, 366);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(137, 60);
             this.button3.TabIndex = 17;
@@ -235,12 +207,73 @@ namespace Kursovaya_work
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // id_sr
+            // 
+            this.id_sr.HeaderText = "id";
+            this.id_sr.Name = "id_sr";
+            // 
+            // fio_client
+            // 
+            this.fio_client.HeaderText = "ФИО клиента";
+            this.fio_client.Name = "fio_client";
+            // 
+            // brand
+            // 
+            this.brand.HeaderText = "Фирма";
+            this.brand.Name = "brand";
+            // 
+            // date_time
+            // 
+            this.date_time.HeaderText = "Дата и врeмя";
+            this.date_time.Name = "date_time";
+            // 
+            // service
+            // 
+            this.service.HeaderText = "Услуга";
+            this.service.Name = "service";
+            this.service.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Стоимость";
+            this.Column1.Name = "Column1";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(888, 327);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(137, 20);
+            this.textBox3.TabIndex = 18;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(885, 301);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(98, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Стоимость услуги";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.button4.Location = new System.Drawing.Point(1148, 73);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(208, 64);
+            this.button4.TabIndex = 20;
+            this.button4.Text = "Обновить";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // prosmotr_uslug
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1368, 447);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.dateTimePicker1);
@@ -256,7 +289,8 @@ namespace Kursovaya_work
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "prosmotr_uslug";
-            this.Text = "prosmotr_uslug";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Просмотр услуг";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.prosmotr_uslug_FormClosed);
             this.Load += new System.EventHandler(this.prosmotr_uslug_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -287,5 +321,8 @@ namespace Kursovaya_work
         private System.Windows.Forms.DataGridViewTextBoxColumn date_time;
         private System.Windows.Forms.DataGridViewTextBoxColumn service;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button4;
     }
 }

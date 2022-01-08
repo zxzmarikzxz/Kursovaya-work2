@@ -33,6 +33,8 @@ namespace Kursovaya_work
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -68,6 +70,28 @@ namespace Kursovaya_work
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.button4.Location = new System.Drawing.Point(189, 230);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(154, 51);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "Просмотр клиентов";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.button5.Location = new System.Drawing.Point(189, 317);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(154, 51);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Изменение сотрудников";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // menu_director
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -75,10 +99,13 @@ namespace Kursovaya_work
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(540, 641);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "menu_director";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Меню директора";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.menu_director_FormClosed);
             this.Load += new System.EventHandler(this.menu_director_Load);
@@ -91,5 +118,7 @@ namespace Kursovaya_work
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }

@@ -62,6 +62,18 @@
     <Compile Include="change_service.Designer.cs">
       <DependentUpon>change_service.cs</DependentUpon>
     </Compile>
+    <Compile Include="change_employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="change_employee.Designer.cs">
+      <DependentUpon>change_employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="prosmotr_clients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="prosmotr_clients.Designer.cs">
+      <DependentUpon>prosmotr_clients.cs</DependentUpon>
+    </Compile>
     <Compile Include="pribil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +112,9 @@
     <EmbeddedResource Include="change_service.resx">
       <DependentUpon>change_service.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="change_employee.resx">
+      <DependentUpon>change_employee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pribil.resx">
       <DependentUpon>pribil.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +134,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="prosmotr_clients.resx">
+      <DependentUpon>prosmotr_clients.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="prosmotr_uslug.resx">
       <DependentUpon>prosmotr_uslug.cs</DependentUpon>
     </EmbeddedResource>

@@ -78,14 +78,14 @@ namespace Kursovaya_work
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 51);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Ввести";
+            this.button1.Text = "Войти";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(144, 22);
+            this.label3.Location = new System.Drawing.Point(130, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(173, 39);
             this.label3.TabIndex = 5;
@@ -96,7 +96,7 @@ namespace Kursovaya_work
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(417, 436);
+            this.ClientSize = new System.Drawing.Size(394, 436);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
@@ -105,7 +105,7 @@ namespace Kursovaya_work
             this.Controls.Add(this.textBox1);
             this.Name = "authorization";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu";
+            this.Text = "Fast Mobile 1.0";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.authorization_FormClosed);
             this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);

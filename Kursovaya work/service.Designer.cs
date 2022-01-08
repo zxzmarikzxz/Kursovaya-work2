@@ -30,11 +30,11 @@ namespace Kursovaya_work
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.ID_service = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.service2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cost_service = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,23 +50,6 @@ namespace Kursovaya_work
             this.dataGridView1.Size = new System.Drawing.Size(537, 397);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // ID_service
-            // 
-            this.ID_service.HeaderText = "ID_service";
-            this.ID_service.Name = "ID_service";
-            // 
-            // service2
-            // 
-            this.service2.FillWeight = 300F;
-            this.service2.HeaderText = "service2";
-            this.service2.Name = "service2";
-            this.service2.Width = 300;
-            // 
-            // cost_service
-            // 
-            this.cost_service.HeaderText = "cost_service";
-            this.cost_service.Name = "cost_service";
             // 
             // button1
             // 
@@ -90,6 +73,23 @@ namespace Kursovaya_work
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // ID_service
+            // 
+            this.ID_service.HeaderText = "ID услуги";
+            this.ID_service.Name = "ID_service";
+            // 
+            // service2
+            // 
+            this.service2.FillWeight = 300F;
+            this.service2.HeaderText = "Услуга";
+            this.service2.Name = "service2";
+            this.service2.Width = 300;
+            // 
+            // cost_service
+            // 
+            this.cost_service.HeaderText = "Стоимость услуги";
+            this.cost_service.Name = "cost_service";
+            // 
             // service
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -100,7 +100,8 @@ namespace Kursovaya_work
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "service";
-            this.Text = "service";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Услуги";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.service_FormClosed);
             this.Load += new System.EventHandler(this.service_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -112,9 +113,9 @@ namespace Kursovaya_work
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_service;
         private System.Windows.Forms.DataGridViewTextBoxColumn service2;
         private System.Windows.Forms.DataGridViewTextBoxColumn cost_service;
-        private System.Windows.Forms.Button button2;
     }
 }

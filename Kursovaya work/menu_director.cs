@@ -45,5 +45,19 @@ namespace Kursovaya_work
         {
             Application.Exit();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            prosmotr_clients cs = new prosmotr_clients();
+            this.Hide();
+            cs.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            change_employee cs = new change_employee();
+            this.Hide();
+            cs.ShowDialog();
+        }
     }
 }
