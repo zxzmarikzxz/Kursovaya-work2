@@ -22,6 +22,8 @@ namespace Kursovaya_work
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //удаление пустой строки
+            dataGridView1.AllowUserToAddRows = false;
             try
             {
                 conbaza.Open();
@@ -63,6 +65,7 @@ namespace Kursovaya_work
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
             menu_director md = new menu_director();
             md.Show();
             this.Close();

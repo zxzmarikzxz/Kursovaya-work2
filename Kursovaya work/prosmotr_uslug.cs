@@ -25,7 +25,8 @@ namespace Kursovaya_work
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            //удаление пустой строки
+            dataGridView1.AllowUserToAddRows = false;
             try
             {
                 conbaza.Open();
@@ -65,6 +66,8 @@ namespace Kursovaya_work
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //удаление пустой строки
+            dataGridView1.AllowUserToAddRows = false;
             //Проверка на пустоту
             if (textBox1.Text == "" || textBox2.Text == "" || comboBox2.Text == "" || comboBox3.Text == "" || dateTimePicker1.Text == "")
             {
@@ -116,6 +119,8 @@ namespace Kursovaya_work
 
         private void button4_Click(object sender, EventArgs e)
         {
+            //удаление пустой строки
+            dataGridView1.AllowUserToAddRows = false;
             try
             {
                 conbaza.Open();

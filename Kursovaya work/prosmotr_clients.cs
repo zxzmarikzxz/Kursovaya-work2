@@ -22,10 +22,12 @@ namespace Kursovaya_work
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //удаление пустой строки
+            dataGridView1.AllowUserToAddRows = false;
             try
             {
                 conbaza.Open();
-                string commandStr = "SELECT ID_sr,date_time,cost_service FROM Service_Rendering";//Запрос к базе данных(взять ID_sr,fio_client,brand,date_time, service из таблицы t_datetime)
+                string commandStr = "SELECT ID_sr,fio_client,date_time FROM Service_Rendering";//Запрос к базе данных(взять ID_sr,fio_client,brand,date_time, service из таблицы t_datetime)
                 MySqlDataAdapter adapter = new MySqlDataAdapter(commandStr, conbaza);
                 DataTable dTable = new DataTable();
                 adapter.Fill(dTable);
@@ -44,13 +46,20 @@ namespace Kursovaya_work
            
             {
                 //Вывод последней строки первого столбца в текстбокс
-                textBox1.Text = Convert.ToString(dataGridView1.Rows.Count - 1);
+                textBox1.Text = Convert.ToString(dataGridView1.Rows.Count - 1+1);
             }
         }
 
         private void prosmotr_clients_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            menu_director md = new menu_director();
+            md.Show();
+            this.Close();
         }
     }
 }

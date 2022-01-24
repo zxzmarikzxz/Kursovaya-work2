@@ -63,6 +63,8 @@ namespace Kursovaya_work
         {                 
                 try
                 {
+                    //удаление пустой строки
+                    dataGridView1.AllowUserToAddRows = false;
                     conbaza.Open();
                     //Запрос к базе данных(взять ID_service,service,cose_service из таблицы service)
                     string commandStr = "SELECT ID_service,service,cost_service FROM Service";
@@ -96,6 +98,8 @@ namespace Kursovaya_work
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //удаление пустой строки
+            dataGridView1.AllowUserToAddRows = false;
             string a = textBox3.Text;
             if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "")
             {
@@ -122,6 +126,8 @@ namespace Kursovaya_work
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //удаление пустой строки
+            dataGridView1.AllowUserToAddRows = false;
             {
                 string a = textBox3.Text;
                 string b = textBox2.Text;
@@ -152,7 +158,8 @@ namespace Kursovaya_work
 
         private void button4_Click(object sender, EventArgs e)
         {
-          
+            //удаление пустой строки
+            dataGridView1.AllowUserToAddRows = false;
                 try
                 {
                     conbaza.Open();

@@ -12,8 +12,8 @@ using Library2;
 
 namespace Kursovaya_work
 {
-    public partial class change_employee : Form
-    {
+    public partial class change_employee : Form      
+    {      
         MySqlConnection conbaza = ConnBaza.connection;
         public change_employee()
         {
@@ -26,6 +26,8 @@ namespace Kursovaya_work
             try
             {
                 conbaza.Open();
+                //удаление пустой строки
+                dataGridView1.AllowUserToAddRows = false;
                 //Запрос к базе данных(взять ID_staff,fio_employee,login,password,access из таблицы Staff)
                 string commandStr = "SELECT ID_staff,fio_employee,login,password,access FROM Staff";
                 MySqlDataAdapter adapter = new MySqlDataAdapter(commandStr, conbaza);
