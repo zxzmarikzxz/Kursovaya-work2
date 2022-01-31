@@ -27,9 +27,8 @@ namespace Kursovaya_work
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {   
+        public void vivod()
+        {
             //удаление пустой строки
             dataGridView1.AllowUserToAddRows = false;
             try
@@ -53,6 +52,17 @@ namespace Kursovaya_work
             }
             conbaza.Close();
         }
+        public void back()
+        {
+            menu_employee me = new menu_employee();
+            this.Hide();
+            me.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            vivod();
+        }
         private void service_Load(object sender, EventArgs e)
         {
 
@@ -66,9 +76,7 @@ namespace Kursovaya_work
 
         private void button2_Click(object sender, EventArgs e)
         {
-            menu_employee me = new menu_employee();
-            this.Hide();
-            me.ShowDialog();
+            back();
         }
     }
 }

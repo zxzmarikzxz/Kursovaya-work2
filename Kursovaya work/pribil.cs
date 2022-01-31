@@ -19,8 +19,7 @@ namespace Kursovaya_work
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        public void data()
         {
             //удаление пустой строки
             dataGridView1.AllowUserToAddRows = false;
@@ -35,22 +34,33 @@ namespace Kursovaya_work
                 for (int i = 0; i < dTable.Rows.Count; i++)//Добавление строк пока i не станет больше или равно количеству строк таблицы(dTable.Rows.Count количество строк таблицы)
                 {
                     dataGridView1.Rows.Add(dTable.Rows[i].ItemArray);
-                }               
-                
+                }
+
             }
             catch
             {
 
             }
             conbaza.Close();
-            int a=0;
-            for (int i = 0; i< dataGridView1.Rows.Count;i++)
+            int a = 0;
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-             //Подсчёт всех данных из столбца и вывод их в текстбокс
-             a+= Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value);
-             textBox1.Text = a.ToString();
+                //Подсчёт всех данных из столбца и вывод их в текстбокс
+                a += Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value);
+                textBox1.Text = a.ToString();
 
             }
+        }
+        public void Back()
+        {
+            menu_director md = new menu_director();
+            md.Show();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            data();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -65,10 +75,7 @@ namespace Kursovaya_work
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
-            menu_director md = new menu_director();
-            md.Show();
-            this.Close();
+            Back();
         }
     }
 }

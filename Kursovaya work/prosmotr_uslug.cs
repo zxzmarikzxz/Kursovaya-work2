@@ -22,8 +22,7 @@ namespace Kursovaya_work
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        public void prosmotr()
         {
             //удаление пустой строки
             dataGridView1.AllowUserToAddRows = false;
@@ -46,25 +45,7 @@ namespace Kursovaya_work
             }
             conbaza.Close();
         }
-
-        private void prosmotr_uslug_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            menu_employee me = new menu_employee();
-            this.Hide();
-            me.ShowDialog();
-        }
-
-        private void prosmotr_uslug_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        public void add_data()
         {
             //удаление пустой строки
             dataGridView1.AllowUserToAddRows = false;
@@ -74,7 +55,7 @@ namespace Kursovaya_work
                 MessageBox.Show("Введите данные");
             }
             else
-            { 
+            {
                 conbaza.Open();
                 {
                     //Вставляем значения в таблицу Service_Rendering
@@ -104,20 +85,7 @@ namespace Kursovaya_work
                 }
             }
         }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            menu_employee md = new menu_employee();
-            md.Show();
-            this.Close();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+        public void reload()
         {
             //удаление пустой строки
             dataGridView1.AllowUserToAddRows = false;
@@ -141,6 +109,53 @@ namespace Kursovaya_work
 
             }
             conbaza.Close();
+        }
+        public void back()
+        {
+            menu_employee md = new menu_employee();
+            md.Show();
+            this.Close();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            prosmotr();
+        }
+
+        private void prosmotr_uslug_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            menu_employee me = new menu_employee();
+            this.Hide();
+            me.ShowDialog();
+        }
+
+        private void prosmotr_uslug_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            add_data();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            back();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            reload();
         }
     }
 }

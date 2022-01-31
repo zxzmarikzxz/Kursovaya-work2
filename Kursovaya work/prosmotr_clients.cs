@@ -19,8 +19,7 @@ namespace Kursovaya_work
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        public void data()
         {
             //удаление пустой строки
             dataGridView1.AllowUserToAddRows = false;
@@ -43,11 +42,21 @@ namespace Kursovaya_work
 
             }
             conbaza.Close();
-           
+
             {
                 //Вывод последней строки первого столбца в текстбокс
-                textBox1.Text = Convert.ToString(dataGridView1.Rows.Count - 1+1);
+                textBox1.Text = Convert.ToString(dataGridView1.Rows.Count - 1 + 1);
             }
+        }
+        public void back()
+        {
+            menu_director md = new menu_director();
+            md.Show();
+            this.Close();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            data();
         }
 
         private void prosmotr_clients_Load(object sender, EventArgs e)
@@ -57,9 +66,7 @@ namespace Kursovaya_work
 
         private void button2_Click(object sender, EventArgs e)
         {
-            menu_director md = new menu_director();
-            md.Show();
-            this.Close();
+            back();
         }
     }
 }

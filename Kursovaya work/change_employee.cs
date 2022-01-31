@@ -19,8 +19,7 @@ namespace Kursovaya_work
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        public void Change_employee()
         {
             //Открытие соединения
             try
@@ -46,8 +45,31 @@ namespace Kursovaya_work
             }
             conbaza.Close();
         }
+        public void Delete_employee()
+        {
+            string a = textBox1.Text;
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Введите данные");
+            }
+            else
+            {
+                try
+                {
+                    conbaza.Open();
+                    string commandStr = $"DELETE FROM Staff WHERE ID_staff = '{a}'";
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(commandStr, conbaza);
+                    DataTable dTable = new DataTable();
+                    adapter.Fill(dTable);
+                }
+                catch
+                {
 
-        private void button3_Click(object sender, EventArgs e)
+                }
+                conbaza.Close();
+            }
+        }
+        public void Add_employee()
         {
             //Проверка на пустоту
             if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "")
@@ -84,58 +106,7 @@ namespace Kursovaya_work
                 }
             }
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            string a = textBox1.Text;
-            if (textBox1.Text == "")
-            {
-                MessageBox.Show("Введите данные");
-            }
-            else
-            {
-                try
-                {
-                    conbaza.Open();
-                    string commandStr = $"DELETE FROM Staff WHERE ID_staff = '{a}'";
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(commandStr, conbaza);
-                    DataTable dTable = new DataTable();
-                    adapter.Fill(dTable);
-                }
-                catch
-                {
-
-                }
-                conbaza.Close();
-            }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            //Открытие соединения
-            try
-            {
-                conbaza.Open();
-                //Запрос к базе данных(взять ID_staff,fio_employee,login,password,access из таблицы Staff)
-                string commandStr = "SELECT ID_staff,fio_employee,login,password,access FROM Staff";
-                MySqlDataAdapter adapter = new MySqlDataAdapter(commandStr, conbaza);
-                DataTable dTable = new DataTable();
-                adapter.Fill(dTable);
-                dataGridView1.Rows.Clear();
-                //Добавление строк пока i не станет больше или равно количеству строк таблицы(dTable.Rows.Count количество строк таблицы)
-                for (int i = 0; i < dTable.Rows.Count; i++)
-                {
-                    dataGridView1.Rows.Add(dTable.Rows[i].ItemArray);
-                }
-            }
-            catch
-            {
-
-            }
-            conbaza.Close();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
+        public void Change_login()
         {
             {
 
@@ -165,8 +136,7 @@ namespace Kursovaya_work
 
             }
         }
-
-        private void button6_Click(object sender, EventArgs e)
+        public void Change_password()
         {
             {
 
@@ -196,12 +166,71 @@ namespace Kursovaya_work
 
             }
         }
+        public void Reload()
+        {
+            //Открытие соединения
+            try
+            {
+                conbaza.Open();
+                //Запрос к базе данных(взять ID_staff,fio_employee,login,password,access из таблицы Staff)
+                string commandStr = "SELECT ID_staff,fio_employee,login,password,access FROM Staff";
+                MySqlDataAdapter adapter = new MySqlDataAdapter(commandStr, conbaza);
+                DataTable dTable = new DataTable();
+                adapter.Fill(dTable);
+                dataGridView1.Rows.Clear();
+                //Добавление строк пока i не станет больше или равно количеству строк таблицы(dTable.Rows.Count количество строк таблицы)
+                for (int i = 0; i < dTable.Rows.Count; i++)
+                {
+                    dataGridView1.Rows.Add(dTable.Rows[i].ItemArray);
+                }
+            }
+            catch
+            {
 
-        private void button7_Click(object sender, EventArgs e)
+            }
+            conbaza.Close();
+        }
+        public void Back()
         {
             menu_director md = new menu_director();
             md.Show();
             this.Close();
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Change_employee();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Add_employee();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Delete_employee();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Reload();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Change_login();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Change_password();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Back();
         }
 
         private void change_employee_Load(object sender, EventArgs e)

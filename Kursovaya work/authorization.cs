@@ -45,6 +45,31 @@ namespace Kursovaya_work
             conbaza.Close();                           
             return a;
         }
+        public void Sueta()
+        {
+            //Если возвращаемое значение a равняется 1(уровень доступа, то есть столбец access в БД), открывается форма меню сотрудника,
+            //если 2 то форма меню директора
+            if (Podkluchenie(textBox1.Text, textBox2.Text) == 1)
+            {
+                MessageBox.Show("Вы авторизированы как сотрудник");
+                //Скрытие данной формы и запуск следующей в зависимости от введёных данных
+                menu_employee me = new menu_employee();
+                this.Hide();
+                me.ShowDialog();
+            }
+            else if (Podkluchenie(textBox1.Text, textBox2.Text) == 2)
+            {
+                MessageBox.Show("Вы авторизированы как директор");
+                menu_director me2 = new menu_director();
+                this.Hide();
+                me2.ShowDialog();
+
+            }
+            else
+            {
+                MessageBox.Show("Введите правильные данные");
+            }
+        }
         public authorization()
         {
             InitializeComponent();
@@ -57,28 +82,7 @@ namespace Kursovaya_work
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Если возвращаемое значение a равняется 1(уровень доступа, то есть столбец access в БД), открывается форма меню сотрудника,
-            //если 2 то форма меню директора
-            if (Podkluchenie(textBox1.Text, textBox2.Text) == 1)
-            {
-                MessageBox.Show("Вы авторизированы как сотрудник");
-                //Скрытие данной формы и запуск следующей в зависимости от введёных данных
-                menu_employee me = new menu_employee();
-                this.Hide();
-                me.ShowDialog();                
-            }
-            else if (Podkluchenie(textBox1.Text, textBox2.Text) == 2)
-            {
-                MessageBox.Show("Вы авторизированы как директор");
-                menu_director me2 = new menu_director();
-                this.Hide();
-                me2.ShowDialog();                
-
-            }
-            else
-            {
-                MessageBox.Show("Введите правильные данные");
-            }
+            Sueta();
         }
 
         private void authorization_FormClosed(object sender, FormClosedEventArgs e)
