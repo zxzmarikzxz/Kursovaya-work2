@@ -116,6 +116,37 @@ namespace Kursovaya_work
             md.Show();
             this.Close();
         }
+        public void otchet()
+        {   //Создание текстового файла в папке        
+            System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\\test\\Отчёт.txt");
+            try
+            {
+                string otchet = "";
+             
+                for (int r = 0; r <= dataGridView1.Rows.Count - 1; r++)
+                {               
+                    for (int c = 0; c <= dataGridView1.Columns.Count - 1; c++)
+                    {
+                        otchet = otchet + dataGridView1.Rows[r].Cells[c].Value;
+                        if (c != dataGridView1.Columns.Count - 1)
+                        {
+                            otchet = otchet + ",";
+                        }
+                    }
+                   
+                    file.WriteLine(otchet);
+                    otchet = "";
+                }
+
+                file.Close();
+                System.Windows.Forms.MessageBox.Show("Export Complete.", "Program Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (System.Exception err)
+            {
+                System.Windows.Forms.MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                file.Close();
+            }
+        } 
         private void button1_Click(object sender, EventArgs e)
         {
             prosmotr();
@@ -156,6 +187,11 @@ namespace Kursovaya_work
         private void button4_Click(object sender, EventArgs e)
         {
             reload();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            otchet();
         }
     }
 }

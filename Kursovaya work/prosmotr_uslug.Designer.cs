@@ -30,6 +30,12 @@ namespace Kursovaya_work
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id_sr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fio_client = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.service = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -43,15 +49,10 @@ namespace Kursovaya_work
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.id_sr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fio_client = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.service = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,6 +71,37 @@ namespace Kursovaya_work
             this.dataGridView1.Size = new System.Drawing.Size(610, 447);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // id_sr
+            // 
+            this.id_sr.HeaderText = "id";
+            this.id_sr.Name = "id_sr";
+            // 
+            // fio_client
+            // 
+            this.fio_client.HeaderText = "ФИО клиента";
+            this.fio_client.Name = "fio_client";
+            // 
+            // brand
+            // 
+            this.brand.HeaderText = "Фирма";
+            this.brand.Name = "brand";
+            // 
+            // date_time
+            // 
+            this.date_time.HeaderText = "Дата и врeмя";
+            this.date_time.Name = "date_time";
+            // 
+            // service
+            // 
+            this.service.HeaderText = "Услуга";
+            this.service.Name = "service";
+            this.service.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Стоимость";
+            this.Column1.Name = "Column1";
             // 
             // button1
             // 
@@ -207,37 +239,6 @@ namespace Kursovaya_work
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // id_sr
-            // 
-            this.id_sr.HeaderText = "id";
-            this.id_sr.Name = "id_sr";
-            // 
-            // fio_client
-            // 
-            this.fio_client.HeaderText = "ФИО клиента";
-            this.fio_client.Name = "fio_client";
-            // 
-            // brand
-            // 
-            this.brand.HeaderText = "Фирма";
-            this.brand.Name = "brand";
-            // 
-            // date_time
-            // 
-            this.date_time.HeaderText = "Дата и врeмя";
-            this.date_time.Name = "date_time";
-            // 
-            // service
-            // 
-            this.service.HeaderText = "Услуга";
-            this.service.Name = "service";
-            this.service.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Стоимость";
-            this.Column1.Name = "Column1";
-            // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(888, 327);
@@ -265,12 +266,24 @@ namespace Kursovaya_work
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.button5.Location = new System.Drawing.Point(1132, 359);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(208, 67);
+            this.button5.TabIndex = 21;
+            this.button5.Text = "Создать отчёт";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // prosmotr_uslug
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1368, 447);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox3);
@@ -324,5 +337,6 @@ namespace Kursovaya_work
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
