@@ -68,6 +68,42 @@
     <Compile Include="change_employee.Designer.cs">
       <DependentUpon>change_employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="change_cash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="change_cash.Designer.cs">
+      <DependentUpon>change_cash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="delete_service.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delete_service.Designer.cs">
+      <DependentUpon>delete_service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="add_service.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_service.Designer.cs">
+      <DependentUpon>add_service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="delete_employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delete_employee.Designer.cs">
+      <DependentUpon>delete_employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="add_employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_employee.Designer.cs">
+      <DependentUpon>add_employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="change_employee_data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="change_employee_data.Designer.cs">
+      <DependentUpon>change_employee_data.cs</DependentUpon>
+    </Compile>
     <Compile Include="prosmotr_clients.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +142,9 @@
     <Compile Include="service.Designer.cs">
       <DependentUpon>service.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="add_service.resx">
+      <DependentUpon>add_service.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="authorization.resx">
       <DependentUpon>authorization.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +153,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="change_employee.resx">
       <DependentUpon>change_employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="change_cash.resx">
+      <DependentUpon>change_cash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delete_service.resx">
+      <DependentUpon>delete_service.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delete_employee.resx">
+      <DependentUpon>delete_employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="add_employee.resx">
+      <DependentUpon>add_employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="change_employee_data.resx">
+      <DependentUpon>change_employee_data.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pribil.resx">
       <DependentUpon>pribil.cs</DependentUpon>

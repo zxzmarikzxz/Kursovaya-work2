@@ -51,95 +51,18 @@ namespace Kursovaya_work
         }
         public void Delete()
         {
-            //удаление пустой строки
-            dataGridView1.AllowUserToAddRows = false;
-            string a = textBox3.Text;
-            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "")
-            {
-                MessageBox.Show("Введите данные");
-            }
-            else
-            {
-                try
-                {
-                    conbaza.Open();
-                    string commandStr = $"DELETE FROM Service WHERE ID_service = '{a}'";
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(commandStr, conbaza);
-                    DataTable dTable = new DataTable();
-                    adapter.Fill(dTable);
-                }
-                catch
-                {
-
-                }
-                conbaza.Close();
-            }
+            delete_service delete_service = new delete_service();
+            delete_service.ShowDialog();
         }
         public void Dobavlenie()
         {
-            //Проверка на пустоту
-            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "")
-            {
-                MessageBox.Show("Введите данные");
-            }
-            else
-            {
-                conbaza.Open();
-                {
-                    //Вставляем значения в таблицу Service
-                    string commandStr = $"INSERT INTO Service (ID_service,service, cost_service) VALUES (@id,@servic,@cost)";
-                    MySqlCommand command = new MySqlCommand(commandStr, conbaza);
-                    try
-                    {
-                        //берём значение из текстбокса и кидаем в базу данных
-                        command.Parameters.Add("@id", MySqlDbType.VarChar).Value = textBox3.Text;
-                        command.Parameters.Add("@servic", MySqlDbType.VarChar).Value = textBox1.Text;
-                        command.Parameters.Add("@cost", MySqlDbType.VarChar).Value = textBox2.Text;
-                        //Изменения данных в базе данных
-                        command.ExecuteNonQuery();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"{ex}");
-                    }
-                    finally
-                    {
-                        conbaza.Close();
-                    }
-                }
-            }
+            add_service add_service = new add_service();
+            add_service.ShowDialog();
         }
         private void Change_cash()
         {
-            //удаление пустой строки
-            dataGridView1.AllowUserToAddRows = false;
-            {
-                string a = textBox3.Text;
-                string b = textBox2.Text;
-                if (textBox2.Text == "" || textBox3.Text == "")
-                {
-                    MessageBox.Show("Введите данные");
-                }
-                else
-                {
-                    try
-                    {
-                        conbaza.Open();
-                        //Обновить значения cost_service и ID_service в таблице Service
-                        string commandStr = $"UPDATE Service SET cost_service = '{b}' WHERE ID_service = '{a}'";
-                        MySqlDataAdapter adapter = new MySqlDataAdapter(commandStr, conbaza);
-                        DataTable dTable = new DataTable();
-                        adapter.Fill(dTable);
-                    }
-                    catch
-                    {
-
-                    }
-                    conbaza.Close();
-                }
-
-            }
+            change_cash change_cash = new change_cash();
+            change_cash.ShowDialog();
         }
         public void Obnovit()
         {
@@ -173,44 +96,46 @@ namespace Kursovaya_work
             md.Show();
             this.Close();
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Dobavlenie();
-        }
-        
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Vivod();       
-        }
-
-        private void change_service_Load(object sender, EventArgs e)
+         private void change_service_Load(object sender, EventArgs e)
         {
 
         }
 
         private void change_service_FormClosed(object sender, FormClosedEventArgs e)
-        {           
+        {
+            menu_director md = new menu_director();
+            md.Show();
             this.Close();
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Delete();      
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Change_cash();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+        private void toolStripButton1_Click(object sender, EventArgs e)
         {
             Obnovit();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            Change_cash();
+            
+        }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
         {
             Nazad();
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            Obnovit();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            Delete();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            Dobavlenie();
         }
     }
 }

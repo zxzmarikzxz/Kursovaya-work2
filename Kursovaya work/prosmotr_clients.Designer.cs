@@ -42,6 +42,7 @@ namespace Kursovaya_work
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -49,7 +50,8 @@ namespace Kursovaya_work
             this.Column3});
             this.dataGridView1.Location = new System.Drawing.Point(2, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(541, 435);
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(502, 435);
             this.dataGridView1.TabIndex = 0;
             // 
             // Column1
@@ -120,6 +122,7 @@ namespace Kursovaya_work
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "prosmotr_clients";
             this.Text = "Просмотр клиентов";
             this.Load += new System.EventHandler(this.prosmotr_clients_Load);

@@ -13,7 +13,7 @@ using Library2;
 namespace Kursovaya_work
 {
     public partial class prosmotr_uslug : Form
-    {
+    {    
         MySqlConnection conbaza = ConnBaza.connection;
         private BindingSource bSource = new BindingSource(); //Унифицированный доступ к источнику данных          
         private DataTable table = new DataTable();
@@ -139,11 +139,11 @@ namespace Kursovaya_work
                 }
 
                 file.Close();
-                System.Windows.Forms.MessageBox.Show("Export Complete.", "Program Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Успешно.","ProgramInfo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (System.Exception err)
             {
-                System.Windows.Forms.MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(err.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 file.Close();
             }
         } 
@@ -166,9 +166,8 @@ namespace Kursovaya_work
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             add_data();

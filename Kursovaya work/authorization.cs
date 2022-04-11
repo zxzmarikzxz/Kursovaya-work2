@@ -90,6 +90,23 @@ namespace Kursovaya_work
             Application.Exit();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ConnBaza ConnBaza = new ConnBaza();
+            try
+            {
+                conbaza.Open();//Попытка открытия соединения
+            }
+            catch (Exception ex)//(Exception ex)-обработка всех исключений, которые могут возникнуть
+            {
+                MessageBox.Show($"{ex}");
+            }
+            finally
+            {
+                MessageBox.Show("Подключение успешно");
+                conbaza.Close();//Закрытие соединения
+            }
+        }
     }
 }
 

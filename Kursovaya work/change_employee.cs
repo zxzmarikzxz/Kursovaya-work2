@@ -14,7 +14,7 @@ namespace Kursovaya_work
 {
     public partial class change_employee : Form      
     {      
-        MySqlConnection conbaza = ConnBaza.connection;
+        MySqlConnection conbaza = ConnBaza.connection;    
         public change_employee()
         {
             InitializeComponent();
@@ -47,125 +47,20 @@ namespace Kursovaya_work
         }
         public void Delete_employee()
         {
-            string a = textBox1.Text;
-            if (textBox1.Text == "")
-            {
-                MessageBox.Show("Введите данные");
-            }
-            else
-            {
-                try
-                {
-                    conbaza.Open();
-                    string commandStr = $"DELETE FROM Staff WHERE ID_staff = '{a}'";
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(commandStr, conbaza);
-                    DataTable dTable = new DataTable();
-                    adapter.Fill(dTable);
-                }
-                catch
-                {
-
-                }
-                conbaza.Close();
-            }
+            delete_employee delete_employee = new delete_employee();
+            delete_employee.ShowDialog();
         }
         public void Add_employee()
         {
-            //Проверка на пустоту
-            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "")
-            {
-                MessageBox.Show("Введите данные");
-            }
-            else
-            {
-                conbaza.Open();
-                {
-                    //Вставляем значения в таблицу Service
-                    string commandStr = $"INSERT INTO Staff (ID_staff,fio_employee,login,password,access) VALUES (@id,@fio,@log,@pass,@acces)";
-                    MySqlCommand command = new MySqlCommand(commandStr, conbaza);
-                    try
-                    {
-                        //берём значение из текстбокса и кидаем в базу данных
-                        command.Parameters.Add("@id", MySqlDbType.VarChar).Value = textBox1.Text;
-                        command.Parameters.Add("@fio", MySqlDbType.VarChar).Value = textBox2.Text;
-                        command.Parameters.Add("@log", MySqlDbType.VarChar).Value = textBox3.Text;
-                        command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = textBox4.Text;
-                        command.Parameters.Add("@acces", MySqlDbType.VarChar).Value = textBox5.Text;
-                        //Изменения данных в базе данных
-                        command.ExecuteNonQuery();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"{ex}");
-                    }
-                    finally
-                    {
-                        conbaza.Close();
-                    }
-                }
-            }
+            add_employee add_employee = new add_employee();
+            add_employee.ShowDialog();
         }
-        public void Change_login()
+        public void Change_data()
         {
-            {
-
-                string a = textBox1.Text;
-                string k = textBox3.Text;
-                if (textBox3.Text == "")
-                {
-                    MessageBox.Show("Введите данные");
-                }
-                else
-                {
-                    try
-                    {
-                        conbaza.Open();
-                        //Обновить значения cost_service и ID_service в таблице Service
-                        string commandStr = $"UPDATE Staff SET login = '{k}' WHERE ID_staff = '{a}'";
-                        MySqlDataAdapter adapter = new MySqlDataAdapter(commandStr, conbaza);
-                        DataTable dTable = new DataTable();
-                        adapter.Fill(dTable);
-                    }
-                    catch
-                    {
-
-                    }
-                    conbaza.Close();
-                }
-
-            }
+            change_employee_data change_employee_data = new change_employee_data();
+            change_employee_data.ShowDialog();
         }
-        public void Change_password()
-        {
-            {
-
-                string a = textBox1.Text;
-                string k = textBox4.Text;
-                if (textBox4.Text == "")
-                {
-                    MessageBox.Show("Введите данные");
-                }
-                else
-                {
-                    try
-                    {
-                        conbaza.Open();
-                        //Обновить значения cost_service и ID_service в таблице Service
-                        string commandStr = $"UPDATE Staff SET password = '{k}' WHERE ID_staff = '{a}'";
-                        MySqlDataAdapter adapter = new MySqlDataAdapter(commandStr, conbaza);
-                        DataTable dTable = new DataTable();
-                        adapter.Fill(dTable);
-                    }
-                    catch
-                    {
-
-                    }
-                    conbaza.Close();
-                }
-
-            }
-        }
+        
         public void Reload()
         {
             //Открытие соединения
@@ -196,46 +91,39 @@ namespace Kursovaya_work
             md.Show();
             this.Close();
         }
+        private void change_employee_Load(object sender, EventArgs e)
+        {
 
+        }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void toolStripButton1_Click(object sender, EventArgs e)
         {
             Change_employee();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Add_employee();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void toolStripButton4_Click(object sender, EventArgs e)
         {
             Delete_employee();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            Reload();
+            Add_employee();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void toolStripButton5_Click(object sender, EventArgs e)
         {
-            Change_login();
+            Change_employee();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            Change_password();
+            Change_data();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void toolStripButton6_Click(object sender, EventArgs e)
         {
             Back();
-        }
-
-        private void change_employee_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
