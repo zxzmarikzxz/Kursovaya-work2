@@ -29,7 +29,7 @@ namespace Kursovaya_work
             try
             {
                 conbaza.Open();
-                string commandStr = "SELECT ID_sr,fio_client,brand,date_time,service,cost_service FROM Service_Rendering";//Запрос к базе данных(взять ID_sr,fio_client,brand,date_time, service из таблицы Service_Rendering)
+                string commandStr = "SELECT ID_sr,fio_client,date_time,service,cost_service FROM Service_Rendering";//Запрос к базе данных(взять ID_sr,fio_client,brand,date_time, service из таблицы Service_Rendering)
                 MySqlDataAdapter adapter = new MySqlDataAdapter(commandStr, conbaza);
                 DataTable dTable = new DataTable();
                 adapter.Fill(dTable);
@@ -59,14 +59,13 @@ namespace Kursovaya_work
                 conbaza.Open();
                 {
                     //Вставляем значения в таблицу Service_Rendering
-                    string commandStr = $"INSERT INTO Service_Rendering (ID_sr,fio_client,brand,date_time,service,cost_service) VALUES (@id,@Fio_client,@brend,@dt,@servIce,@cost)";
+                    string commandStr = $"INSERT INTO Service_Rendering (ID_sr,fio_client,date_time,service,cost_service) VALUES (@id,@Fio_client,@dt,@servIce,@cost)";
                     MySqlCommand command = new MySqlCommand(commandStr, conbaza);
                     try
                     {
                         //берём значение из текстбоксов,комбобоксов,дататаймпикера и кидаем в базу данных
                         command.Parameters.Add("@id", MySqlDbType.VarChar).Value = textBox1.Text;
                         command.Parameters.Add("@Fio_client", MySqlDbType.VarChar).Value = textBox2.Text;
-                        command.Parameters.Add("@brend", MySqlDbType.VarChar).Value = comboBox3.Text;
                         command.Parameters.Add("@dt", MySqlDbType.DateTime).Value = dateTimePicker1.Text;
                         command.Parameters.Add("@servIce", MySqlDbType.VarChar).Value = comboBox2.Text;
                         command.Parameters.Add("@cost", MySqlDbType.VarChar).Value = textBox3.Text;

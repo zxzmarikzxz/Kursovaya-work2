@@ -45,7 +45,7 @@ namespace Kursovaya_work
 
             {
                 //Вывод последней строки первого столбца в текстбокс
-                textBox1.Text = Convert.ToString(dataGridView1.Rows.Count - 1 + 1);
+                toolStripLabel3.Text = Convert.ToString(dataGridView1.Rows.Count - 1 + 1);
             }
         }
         public void back()
@@ -65,6 +65,16 @@ namespace Kursovaya_work
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            back();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            data();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
         {
             back();
         }
