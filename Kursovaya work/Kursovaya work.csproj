@@ -110,12 +110,6 @@
     <Compile Include="prosmotr_clients.Designer.cs">
       <DependentUpon>prosmotr_clients.cs</DependentUpon>
     </Compile>
-    <Compile Include="pribil.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="pribil.Designer.cs">
-      <DependentUpon>pribil.cs</DependentUpon>
-    </Compile>
     <Compile Include="menu_director.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,9 +162,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="change_employee_data.resx">
       <DependentUpon>change_employee_data.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="pribil.resx">
-      <DependentUpon>pribil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="menu_director.resx">
       <DependentUpon>menu_director.cs</DependentUpon>

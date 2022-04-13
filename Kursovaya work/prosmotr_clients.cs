@@ -26,7 +26,7 @@ namespace Kursovaya_work
             try
             {
                 conbaza.Open();
-                string commandStr = "SELECT ID_sr,fio_client,date_time FROM Service_Rendering";//Запрос к базе данных(взять ID_sr,fio_client,brand,date_time, service из таблицы t_datetime)
+                string commandStr = "SELECT ID_sr,fio_client,date_time,cost_service FROM Service_Rendering";//Запрос к базе данных(взять ID_sr,fio_client,brand,date_time, service из таблицы t_datetime)
                 MySqlDataAdapter adapter = new MySqlDataAdapter(commandStr, conbaza);
                 DataTable dTable = new DataTable();
                 adapter.Fill(dTable);
@@ -42,10 +42,18 @@ namespace Kursovaya_work
 
             }
             conbaza.Close();
+            int a = 0;
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                //Подсчёт всех данных из столбца и вывод их в текстбокс
+                a += Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value);
+                toolStripLabel5.Text = a.ToString()+" Рублей";
 
+            }
             {
                 //Вывод последней строки первого столбца в текстбокс
                 toolStripLabel3.Text = Convert.ToString(dataGridView1.Rows.Count - 1 + 1);
+                
             }
         }
         public void back()
@@ -75,6 +83,11 @@ namespace Kursovaya_work
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            back();
+        }
+
+        private void toolStripButton2_Click_1(object sender, EventArgs e)
         {
             back();
         }
