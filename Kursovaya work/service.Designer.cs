@@ -46,7 +46,7 @@ namespace Kursovaya_work
             this.ID_service,
             this.service2,
             this.cost_service});
-            this.dataGridView1.Location = new System.Drawing.Point(46, 44);
+            this.dataGridView1.Location = new System.Drawing.Point(-1, -2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(503, 381);
@@ -56,7 +56,7 @@ namespace Kursovaya_work
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button1.Location = new System.Drawing.Point(582, 124);
+            this.button1.Location = new System.Drawing.Point(532, 92);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(92, 77);
             this.button1.TabIndex = 1;
@@ -67,7 +67,7 @@ namespace Kursovaya_work
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button2.Location = new System.Drawing.Point(582, 259);
+            this.button2.Location = new System.Drawing.Point(532, 280);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(92, 77);
             this.button2.TabIndex = 2;
@@ -77,19 +77,19 @@ namespace Kursovaya_work
             // 
             // ID_service
             // 
-            this.ID_service.HeaderText = "";
+            this.ID_service.HeaderText = "ID";
             this.ID_service.Name = "ID_service";
             // 
             // service2
             // 
             this.service2.FillWeight = 300F;
-            this.service2.HeaderText = "";
+            this.service2.HeaderText = "Услуга";
             this.service2.Name = "service2";
             this.service2.Width = 300;
             // 
             // cost_service
             // 
-            this.cost_service.HeaderText = "";
+            this.cost_service.HeaderText = "Цена";
             this.cost_service.Name = "cost_service";
             // 
             // service
@@ -97,7 +97,7 @@ namespace Kursovaya_work
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(698, 450);
+            this.ClientSize = new System.Drawing.Size(648, 380);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);

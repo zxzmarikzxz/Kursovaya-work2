@@ -16,7 +16,7 @@ namespace Kursovaya_work
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new authorization());
+            Application.Run(new prosmotr_uslug());
         }
     }
 }

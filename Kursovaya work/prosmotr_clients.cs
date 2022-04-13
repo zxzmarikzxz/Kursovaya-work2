@@ -62,21 +62,10 @@ namespace Kursovaya_work
             md.Show();
             this.Close();
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            data();
-        }
-
         private void prosmotr_clients_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            back();
-        }
-
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             data();

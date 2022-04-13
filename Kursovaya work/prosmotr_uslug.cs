@@ -45,45 +45,6 @@ namespace Kursovaya_work
             }
             conbaza.Close();
         }
-        public void add_data()
-        {
-            //удаление пустой строки
-            dataGridView1.AllowUserToAddRows = false;
-            //Проверка на пустоту
-            if (textBox1.Text == "" || textBox2.Text == "" || comboBox2.Text == "" || comboBox3.Text == "" || dateTimePicker1.Text == "")
-            {
-                MessageBox.Show("Введите данные");
-            }
-            else
-            {
-                conbaza.Open();
-                {
-                    //Вставляем значения в таблицу Service_Rendering
-                    string commandStr = $"INSERT INTO Service_Rendering (ID_sr,fio_client,date_time,service,cost_service) VALUES (@id,@Fio_client,@dt,@servIce,@cost)";
-                    MySqlCommand command = new MySqlCommand(commandStr, conbaza);
-                    try
-                    {
-                        //берём значение из текстбоксов,комбобоксов,дататаймпикера и кидаем в базу данных
-                        command.Parameters.Add("@id", MySqlDbType.VarChar).Value = textBox1.Text;
-                        command.Parameters.Add("@Fio_client", MySqlDbType.VarChar).Value = textBox2.Text;
-                        command.Parameters.Add("@dt", MySqlDbType.DateTime).Value = dateTimePicker1.Text;
-                        command.Parameters.Add("@servIce", MySqlDbType.VarChar).Value = comboBox2.Text;
-                        command.Parameters.Add("@cost", MySqlDbType.VarChar).Value = textBox3.Text;
-                        //Изменения данных в БД
-                        command.ExecuteNonQuery();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"{ex}");
-                    }
-                    finally
-                    {
-                        conbaza.Close();
-                    }
-                }
-            }
-        }
         public void reload()
         {
             //удаление пустой строки
@@ -92,7 +53,7 @@ namespace Kursovaya_work
             {
                 conbaza.Open();
                 //Запрос к базе данных(взять ID_sr,fio_client,brand,date_time,service,cost_service из таблицы Service_Rendering)
-                string commandStr = "SELECT ID_sr,fio_client,brand,date_time,service,cost_service FROM Service_Rendering";
+                string commandStr = "SELECT ID_sr,fio_client,date_time,service,cost_service FROM Service_Rendering";
                 MySqlDataAdapter adapter = new MySqlDataAdapter(commandStr, conbaza);
                 DataTable dTable = new DataTable();
                 adapter.Fill(dTable);
@@ -117,7 +78,7 @@ namespace Kursovaya_work
         }
         public void otchet()
         {   //Создание текстового файла в папке        
-            System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\\test\\Отчёт.txt");
+            System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\\Otchet\\Отчёт.txt");
             try
             {
                 string otchet = "";
@@ -146,11 +107,6 @@ namespace Kursovaya_work
                 file.Close();
             }
         } 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            prosmotr();
-        }
-
         private void prosmotr_uslug_FormClosed(object sender, FormClosedEventArgs e)
         {
             menu_employee me = new menu_employee();
@@ -167,27 +123,32 @@ namespace Kursovaya_work
         {
             
         }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            add_data();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            back();
-        }
-
         private void label3_Click(object sender, EventArgs e)
         {
 
         }
+         private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            prosmotr();
+        }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void toolStripButton3_Click(object sender, EventArgs e)
         {
             reload();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            back();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            add_service_rendering me = new add_service_rendering();
+            me.ShowDialog();
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
         {
             otchet();
         }
